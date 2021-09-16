@@ -34,11 +34,17 @@ import re
 # In[2]:
 
 
+df = pd.read_csv("clarkesworld.csv")
+
+
+# In[3]:
+
+
 response = requests.get("https://clarkesworldmagazine.com")
 doc = BeautifulSoup(response.text, 'html.parser')
 
 
-# In[3]:
+# In[4]:
 
 
 stories = doc.select('.index-col1, .index-col2')
@@ -60,10 +66,11 @@ for story in stories:
     rows.append(row)
 
 
-# In[4]:
+# In[5]:
 
 
-df = pd.DataFrame(rows)
+# df = pd.DataFrame(rows)
+df.append(rows)
 df
 
 
