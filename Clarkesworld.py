@@ -34,7 +34,10 @@ import re
 # In[2]:
 
 
-df = pd.read_csv("clarkesworld.csv")
+try:
+    df = pd.read_csv("clarkesworld.csv")
+except:
+    df = pd.DataFrame()
 
 
 # In[3]:
